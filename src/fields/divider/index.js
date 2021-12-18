@@ -34,7 +34,6 @@ Divider.propTypes = {
         PropTypes.number,
         PropTypes.string
     ]),
-    dividerHeight: PropTypes.number,
     color: PropTypes.string,
 };
 

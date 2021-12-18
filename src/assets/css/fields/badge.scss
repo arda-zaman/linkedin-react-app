@@ -1,0 +1,34 @@
+
+.badge-field {
+    position: relative;
+
+    small {
+        background-color: var(--red);
+        display: block;
+        width: 18px;
+        height: 18px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff;
+        border-radius: 50%;
+        font-weight: bold;
+        position: absolute;
+    }
+
+    &.topLeft {
+
+        small {
+            left: 10px;
+            top:2px;
+        }
+    }
+
+    &.topRight {
+
+        small {
+            right: 10px;
+            top: 2px;
+        }
+    }
+}

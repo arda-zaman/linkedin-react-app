@@ -3,7 +3,7 @@ import { LogoSmall, ProfileImage } from '../assets/files';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUserFriends, faBriefcase, faCommentDots, faBell, faSearch, faCaretDown, faTh } from '@fortawesome/free-solid-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
-import { Divider } from '../fields';
+import { Divider, Badge } from '../fields';
 
 const menuItems = [
     { text: 'Home',
@@ -38,10 +38,12 @@ const Header = () => {
 
                     <nav className="right-side">
                         {menuItems.map((item, index) => (
-                            <NavLink to={item.URL} className="menu-item" key={index}>
-                                <FontAwesomeIcon icon={item.icon} />
-                                <span>{item.text}</span>
-                            </NavLink>
+                            <Badge count={5} key={index}>
+                                <NavLink to={item.URL} className="menu-item">
+                                    <FontAwesomeIcon icon={item.icon} />
+                                    <span>{item.text}</span>
+                                </NavLink>
+                            </Badge>
                         ))}
 
                         <div className="menu-item">
