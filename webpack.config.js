@@ -5,11 +5,13 @@ module.exports = {
     entry: path.resolve(__dirname, 'src', 'index.js'),
     output: {
         path: path.resolve(__dirname, 'dist'),
-        filename: 'main_bundle.[contenthash].js'
+        filename: 'main_bundle.[contenthash].js',
+        publicPath: '/'
     },
     devServer: {
         port: 8000,
-        open: true
+        open: true,
+        historyApiFallback: true
     },
     module: {
         rules: [
