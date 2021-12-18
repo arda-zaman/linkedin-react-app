@@ -10,7 +10,8 @@
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint src"
+    "lint": "eslint src",
+    "prepare": "npx husky add .husky/pre-commit \"yarn lint\" && git add .husky/pre-commit"
   },
   "devDependencies": {
     "@babel/core": "^7.16.5",
@@ -26,6 +27,7 @@
     "eslint-plugin-react": "^7.27.1",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.5.0",
+    "husky": "^7.0.4",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.65.0",

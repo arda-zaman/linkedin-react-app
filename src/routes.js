@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import App from './containers/app';
 import HelloWorld from './pages/hello-world';
 
-export default () => (
+const RoutesComp = () => (
     <BrowserRouter>
         <Routes>
             <Route path="/" element={<App />}>
@@ -13,3 +13,5 @@ export default () => (
         </Routes>
     </BrowserRouter>
 );
+
+export default RoutesComp;
