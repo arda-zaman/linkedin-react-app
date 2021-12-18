@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { ProfileImage } from '../assets/files';
-import { Divider } from '../fields';
+import { Divider, Button } from '../fields';
 
 const menuItems = {
     account: [
@@ -26,7 +26,9 @@ const ProfileDropdown = () => {
                 </div>
             </div>
 
-            {/* view profile */}
+            <Link to="#" className="mt-2 d-block">
+                <Button label="View Profile" block shape="circle" />
+            </Link>
 
             <Divider />
 
