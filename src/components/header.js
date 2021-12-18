@@ -3,13 +3,24 @@ import { LogoSmall, ProfileImage } from '../assets/files';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUserFriends, faBriefcase, faCommentDots, faBell, faSearch, faCaretDown, faTh } from '@fortawesome/free-solid-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
+import { Divider } from '../fields';
 
 const menuItems = [
-    { text: 'Home', icon: faHome, URL: '/' },
-    { text: 'My Network', icon: faUserFriends, URL: '/mynetwork' },
-    { text: 'Jobs', icon: faBriefcase, URL: '/jobs' },
-    { text: 'Messaging', icon: faCommentDots, URL: '/messaging' },
-    { text: 'Notifications', icon: faBell, URL: '/notifications' },
+    { text: 'Home',
+icon: faHome,
+URL: '/' },
+    { text: 'My Network',
+icon: faUserFriends,
+URL: '/mynetwork' },
+    { text: 'Jobs',
+icon: faBriefcase,
+URL: '/jobs' },
+    { text: 'Messaging',
+icon: faCommentDots,
+URL: '/messaging' },
+    { text: 'Notifications',
+icon: faBell,
+URL: '/notifications' },
 ];
 
 const Header = () => {
@@ -39,6 +50,7 @@ const Header = () => {
                         </div>
 
                         {/* DIVIDER */}
+                        <Divider orientation="vertical" />
 
                         <div className="menu-item">
                             <FontAwesomeIcon icon={faTh} />
