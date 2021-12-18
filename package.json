@@ -10,7 +10,9 @@
     "build": "webpack --mode production",
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook",
-    "lint": "eslint src",
+    "lint": "yarn run lint:js && yarn run lint:scss",
+    "lint:js": "eslint src",
+    "lint:scss": "npx stylelint '**/*.scss'",
     "prepare": "npx husky add .husky/pre-commit \"yarn lint\" && git add .husky/pre-commit"
   },
   "devDependencies": {
@@ -31,6 +33,8 @@
     "node-sass": "^7.0.0",
     "sass-loader": "^12.4.0",
     "style-loader": "^3.3.1",
+    "stylelint": "^14.1.0",
+    "stylelint-scss": "^4.0.1",
     "webpack": "^5.65.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.6.0"
