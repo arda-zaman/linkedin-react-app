@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUserFriends, faBriefcase, faCommentDots, faBell, faSearch, faCaretDown, faTh } from '@fortawesome/free-solid-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
 import { Divider, Badge } from '../fields';
+// import { useStore } from '../hooks';
 
 const menuItems = [
     { text: 'Home', icon: faHome, count: 0, URL: '/' },

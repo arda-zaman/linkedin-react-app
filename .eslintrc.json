@@ -26,7 +26,7 @@
         "array-bracket-newline": "error",
         "array-bracket-spacing": "error",
         "array-callback-return": "error",
-        "array-element-newline": "error",
+        "array-element-newline": "off",
         "arrow-body-style": "off",
         "arrow-parens": [
             "error",
@@ -43,10 +43,7 @@
         "block-spacing": "error",
         "brace-style": "error",
         "camelcase": "error",
-        "capitalized-comments": [
-            "error",
-            "always"
-        ],
+        "capitalized-comments": "off",
         "class-methods-use-this": "error",
         "comma-dangle": "off",
         "comma-spacing": [
@@ -79,7 +76,7 @@
             "error",
             "expression"
         ],
-        "function-call-argument-newline": "error",
+        "function-call-argument-newline": "off",
         "function-paren-newline": "error",
         "generator-star-spacing": "error",
         "grouped-accessor-pairs": "error",
@@ -252,10 +249,7 @@
             "error",
             "last"
         ],
-        "sort-keys": [
-            "error",
-            "desc"
-        ],
+        "sort-keys": "off",
         "sort-vars": "error",
         "space-before-blocks": "error",
         "space-before-function-paren": "error",
