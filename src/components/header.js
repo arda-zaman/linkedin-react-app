@@ -6,21 +6,11 @@ import { NavLink, Link } from 'react-router-dom';
 import { Divider, Badge } from '../fields';
 
 const menuItems = [
-    { text: 'Home',
-icon: faHome,
-URL: '/' },
-    { text: 'My Network',
-icon: faUserFriends,
-URL: '/mynetwork' },
-    { text: 'Jobs',
-icon: faBriefcase,
-URL: '/jobs' },
-    { text: 'Messaging',
-icon: faCommentDots,
-URL: '/messaging' },
-    { text: 'Notifications',
-icon: faBell,
-URL: '/notifications' },
+    { text: 'Home', icon: faHome, count: 0, URL: '/' },
+    { text: 'My Network', icon: faUserFriends, count: 0, URL: '/mynetwork' },
+    { text: 'Jobs', icon: faBriefcase, count: 0, URL: '/jobs' },
+    { text: 'Messaging', icon: faCommentDots, count: 2, URL: '/messaging' },
+    { text: 'Notifications', icon: faBell, count: 4, URL: '/notifications' },
 ];
 
 const Header = () => {
@@ -38,7 +28,7 @@ const Header = () => {
 
                     <nav className="right-side">
                         {menuItems.map((item, index) => (
-                            <Badge count={5} key={index}>
+                            <Badge count={item.count} key={index}>
                                 <NavLink to={item.URL} className="menu-item">
                                     <FontAwesomeIcon icon={item.icon} />
                                     <span>{item.text}</span>

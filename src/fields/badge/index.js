@@ -15,7 +15,11 @@ const Badge = ({
 }) => (
     <div className={`badge-field ${position}`}>
         {children}
-        <small hidden={showCountOnZero && count === 0}>{count > overflow ? `${overflow}+` : count}</small>
+        <small
+            style={{ display: (!showCountOnZero && count === 0) ? 'none' : 'flex' }}
+        >
+            {count > overflow ? `${overflow}+` : count}
+        </small>
     </div>
 );
 
@@ -31,7 +35,7 @@ Badge.propTypes = {
 };
 
 Badge.defaultProps = {
-    showCountOnZero: true,
+    showCountOnZero: false,
     position: 'topRight',
     overflow: 9,
     count: 0,
