@@ -11,14 +11,17 @@ const Divider = ({
     const dWidth = orientation === 'horizontal' ? dividerSize : 0;
     const dHeight = orientation === 'horizontal' ? 0 : dividerSize;
     const borderSide = orientation === 'horizontal' ? 'borderTopWidth' : 'borderLeftWidth';
+    const margin = orientation === 'horizontal' ? '10px 0' : '0 10px';
 
     return (
         <hr
+            className="d-block"
             style={{
                 width: dWidth,
                 height: dHeight,
                 [borderSide]: thickness,
-                borderColor: color
+                borderColor: color,
+                margin
             }}
         />
     );
@@ -41,7 +44,7 @@ Divider.defaultProps = {
     thickness: 1,
     orientation: 'horizontal',
     dividerSize: 'auto',
-    color: '#EBEBEB',
+    color: 'rgba(0,0,0, 0.08)',
 }
 
 export default Divider;

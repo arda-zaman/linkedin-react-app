@@ -1,4 +1,4 @@
-import React, { useState, createContext, useCallback } from 'react';
+import React, { useState, createContext } from 'react';
 import PropTypes from 'prop-types';
 
 export const StoreContext = createContext();
@@ -12,11 +12,13 @@ const Store = ({
         user: {}
     });
 
-    const updateStore = useCallback((storeKey, key, value) => {
-        setState((prevState) => (
-            prevState[storeKey][key] = value
-        ));
-    }, [state]);
+    const updateStore = (storeKey, key, value) => {
+        setState((prevState) => {
+            const storeClone = Object.create(prevState);
+            storeClone[storeKey][key] = value;
+            return storeClone;
+        });
+    };
 
     return (
         <StoreContext.Provider value={[state, updateStore]}>

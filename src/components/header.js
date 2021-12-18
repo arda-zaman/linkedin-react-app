@@ -1,10 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 import { LogoSmall, ProfileImage } from '../assets/files';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faHome, faUserFriends, faBriefcase, faCommentDots, faBell, faSearch, faCaretDown, faTh } from '@fortawesome/free-solid-svg-icons'
 import { NavLink, Link } from 'react-router-dom';
 import { Divider, Badge } from '../fields';
-// import { useStore } from '../hooks';
+import { useStore } from '../hooks';
+import ProfileDropdown from './profile-dropdown';
 
 const menuItems = [
     { text: 'Home', icon: faHome, count: 0, URL: '/' },
@@ -15,6 +16,13 @@ const menuItems = [
 ];
 
 const Header = () => {
+    const [store, updateStore] = useStore();
+    const { ui } = store;
+
+    const toggleProfileDropdown = useCallback(() => {
+        updateStore('ui', 'profile_dropdown', !ui.profile_dropdown);
+    }, [ui.profile_dropdown]);
+
     return (
         <header>
             <div className="container h-inherit">
@@ -31,27 +39,36 @@ const Header = () => {
                         {menuItems.map((item, index) => (
                             <Badge count={item.count} key={index}>
                                 <NavLink to={item.URL} className="menu-item">
-                                    <FontAwesomeIcon icon={item.icon} />
-                                    <span>{item.text}</span>
+                                    <div className="inner-menu-item">
+                                        <FontAwesomeIcon icon={item.icon} />
+                                        <span>{item.text}</span>
+                                    </div>
                                 </NavLink>
                             </Badge>
                         ))}
 
-                        <div className="menu-item">
-                            <img src={ProfileImage} />
-                            <span>Me <FontAwesomeIcon icon={faCaretDown} /></span>
+                        <div className="menu-item" id="profile-dropdown-menu-item">
+                            <div className="inner-menu-item" onClick={toggleProfileDropdown}>
+                                <img src={ProfileImage} />
+                                <span>Me <FontAwesomeIcon icon={faCaretDown} /></span>
+                            </div>
+
+                            {ui.profile_dropdown && <ProfileDropdown />}
                         </div>
 
-                        {/* DIVIDER */}
                         <Divider orientation="vertical" />
 
                         <div className="menu-item">
-                            <FontAwesomeIcon icon={faTh} />
-                            <span>Work <FontAwesomeIcon icon={faCaretDown} /></span>
+                            <div className="inner-menu-item">
+                                <FontAwesomeIcon icon={faTh} />
+                                <span>Work <FontAwesomeIcon icon={faCaretDown} /></span>
+                            </div>
                         </div>
 
                         <div className="menu-item">
-                            <Link className="link-text" to="#">Try Premium for Free</Link>
+                            <div className="inner-menu-item">
+                                <Link className="link-text" to="#">Try Premium for Free</Link>
+                            </div>
                         </div>
                     </nav>
                 </div>

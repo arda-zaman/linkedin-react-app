@@ -5,6 +5,10 @@
 @import './header.scss';
 /* stylelint-enable at-rule-empty-line-before */
 
+* {
+    box-sizing: border-box;
+}
+
 .container {
     width: 100%;
     max-width: 1128px;
