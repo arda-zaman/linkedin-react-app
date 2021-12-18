@@ -211,7 +211,7 @@
             "error",
             "always"
         ],
-        "object-property-newline": "error",
+        "object-property-newline": "warn",
         "object-shorthand": "error",
         "one-var": "off",
         "one-var-declaration-per-line": "error",

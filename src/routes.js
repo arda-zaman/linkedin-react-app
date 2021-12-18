@@ -6,7 +6,7 @@ import HelloWorld from './pages/hello-world';
 const RoutesComp = () => (
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App />}>
+            <Route path="*" element={<App />}>
                 <Route path="hello-world" element={<HelloWorld />} />
             </Route>
             <Route path="*" element={<div>not found</div>} />
