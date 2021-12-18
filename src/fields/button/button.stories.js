@@ -1,5 +1,7 @@
 import React from 'react';
 import Button from './index';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faPlus } from '@fortawesome/free-solid-svg-icons'
 
 export default {
   title: 'Button',
@@ -16,23 +18,16 @@ const Template = (args) => <Button {...args} />;
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {
-  primary: true,
-  label: 'Button',
+  type: 'primary'
 };
 
 export const Secondary = Template.bind({});
 Secondary.args = {
-  label: 'Button',
+  type: 'secondary'
 };
 
-export const Large = Template.bind({});
-Large.args = {
-  size: 'large',
-  label: 'Button',
-};
-
-export const Small = Template.bind({});
-Small.args = {
-  size: 'small',
-  label: 'Button',
+export const Icon = Template.bind({});
+Icon.args = {
+  type: 'secondary',
+  icon: <FontAwesomeIcon icon={faPlus} />
 };
