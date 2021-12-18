@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 if (process && process?.env?.STORYBOOK) {
     require('../../assets/css/colors.scss');
-    require('../../assets/css/fields/button.scss');
+    require('../../assets/css/fields/card.scss');
 }
 
 const Button = ({
