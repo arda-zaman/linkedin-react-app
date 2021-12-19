@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from '../../fields';
 import { Icon } from '../../components';
@@ -6,7 +7,9 @@ import { ProfileImage, Logo } from '../../assets/files';
 
 const navItems = ['About', 'Accessibility', 'Help Center', 'Privacy & Terms', 'Ad Choices', 'Advertising', 'Business Services'];
 
-const RightSide = () => {
+const RightSide = ({
+    isFixed
+}) => {
 
     return (
         <div className="right-side">
@@ -36,7 +39,7 @@ const RightSide = () => {
                 <Button className="view-all-button" type="link">View all recommendatations <Icon icon="faArrowRight" /></Button>
             </Card>
 
-            <section className="right-nav">
+            <section className={`right-nav ${isFixed ? '--fixed' : ''}`}>
                 <ul className="d-flex justify-around flex-wrap">
                     {navItems.map((navItem, idx) => (
                         <li key={idx}>
@@ -53,5 +56,14 @@ const RightSide = () => {
         </div>
     )
 };
+
+
+RightSide.propTypes = {
+    isFixed: PropTypes.bool
+};
+
+RightSide.defaultProps = {
+    isFixed: false
+}
 
 export default RightSide;

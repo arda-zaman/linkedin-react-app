@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Button, Card, Divider } from '../../fields';
 import { ProfileImage } from '../../assets/files';
 import { Link } from 'react-router-dom';
@@ -24,7 +25,9 @@ const communityPanelItems = {
     ]
 }
 
-const LeftSide = () => {
+const LeftSide = ({
+    isFixed
+}) => {
     return (
         <div className="left-side">
             <Card id="profile-card" block>
@@ -56,7 +59,7 @@ const LeftSide = () => {
 
             </Card>
 
-            <Card id="community-panel" className="mt-3" block>
+            <Card id="community-panel" className={`mt-3 ${isFixed ? '--fixed' : ''}`} block>
                 <div className="community-panel-content">
                     <small>Recent</small>
 
@@ -90,5 +93,13 @@ const LeftSide = () => {
         </div>
     )
 };
+
+LeftSide.propTypes = {
+    isFixed: PropTypes.bool
+};
+
+LeftSide.defaultProps = {
+    isFixed: false
+}
 
 export default LeftSide;

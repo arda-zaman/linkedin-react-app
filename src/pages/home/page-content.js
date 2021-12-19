@@ -4,7 +4,6 @@ import * as Icons from '../../assets/files'
 import { Icon } from '../../components';
 
 const PageContent = () => {
-
     return (
         <div className="home-page-content">
             <Card id="post-comment" block>

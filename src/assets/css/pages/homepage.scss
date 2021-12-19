@@ -9,6 +9,7 @@
     .left-side {
         max-width: 225px;
         flex: 0 0 225px;
+        width: 225px;
 
         #profile-card {
 
@@ -93,6 +94,7 @@
 
         #community-panel {
             color: var(--dark-gray);
+            width: inherit;
 
             .community-panel-content {
 
@@ -133,6 +135,11 @@
                         }
                     }
                 }
+            }
+
+            &.--fixed {
+                position: fixed;
+                top: 60px;
             }
         }
     }
@@ -224,6 +231,7 @@
     .right-side {
         max-width: 315px;
         flex: 0 0 315px;
+        width: 315px;
 
         #add-to-your-feed-card {
 
@@ -267,9 +275,17 @@
         }
 
         .right-nav {
-            max-width: 70%;
             margin: 0 auto;
             margin-top: 20px;
+            width: inherit;
+            text-align: center;
+
+            ul {
+
+                li {
+                    margin: 4px;
+                }
+            }
 
             .copyright {
 
@@ -282,6 +298,12 @@
                     position: relative;
                     top: -10px;
                 }
+            }
+
+
+            &.--fixed {
+                position: fixed;
+                top: 60px;
             }
         }
     }
