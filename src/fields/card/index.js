@@ -6,10 +6,11 @@ const CardComponent = ({
     icon,
     children,
     block,
-    id
+    id,
+    className
 }) => {
     return (
-        <div className={`card-field ${block ? 'block' : ''}`} id={id}>
+        <div className={`card-field ${className} ${block ? 'block' : ''}`} id={id}>
             {title && (
                 <div className="card-header d-flex justify-between align-center">
                     <strong>{title}</strong>
@@ -29,14 +30,16 @@ CardComponent.propTypes = {
     icon: PropTypes.node,
     children: PropTypes.node,
     block: PropTypes.bool,
-    id: PropTypes.string
+    id: PropTypes.string,
+    className: PropTypes.string
 };
 
 CardComponent.defaultProps = {
     title: '',
     icon: null,
     block: false,
-    id: ''
+    id: '',
+    className: ''
 };
 
 export default CardComponent;
