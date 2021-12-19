@@ -15,14 +15,20 @@ const App = () => {
 
     useLayoutEffect(() => {
         window.addEventListener('click', windowClickListener);
-        return () => window.removeEventListener('click');
+        return () => window.removeEventListener('click', windowClickListener);
     }, []);
 
     return (
 
             <div className="app-container">
                 <Header />
-                <Outlet />
+                <div className="content">
+                    <div className="container">
+                        <div className="inner-content-wrapper">
+                            <Outlet />
+                        </div>
+                    </div>
+                </div>
             </div>
 
     )

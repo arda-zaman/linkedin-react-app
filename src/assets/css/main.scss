@@ -22,3 +22,9 @@ body {
     margin:0;
     font-family: Arial, Helvetica, sans-serif;
 }
+
+.content {
+    padding-top: 63px;
+
+    @import './pages/homepage.scss';
+}
