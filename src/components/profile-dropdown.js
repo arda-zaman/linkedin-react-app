@@ -27,7 +27,7 @@ const ProfileDropdown = () => {
             </div>
 
             <Link to="#" className="mt-2 d-block">
-                <Button label="View Profile" block shape="circle" />
+                <Button block shape="circle">View Profile</Button>
             </Link>
 
             <Divider />

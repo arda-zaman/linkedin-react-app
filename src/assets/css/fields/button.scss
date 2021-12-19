@@ -47,6 +47,18 @@
                 background-color: rgba(#5F6163, 0.2)!important;
             }
         }
+
+        &.type-link {
+
+            a {
+                text-decoration: none;
+                color: inherit;
+            }
+
+            &:hover {
+                background-color: var(--gray);
+            }
+        }
     
         &.shape-round {
             border-radius: 4px;

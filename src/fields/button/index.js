@@ -7,7 +7,7 @@ if (process && process?.env?.STORYBOOK) {
 }
 
 const Button = ({
-    label,
+    children,
     type,
     htmlType,
     shape,
@@ -28,21 +28,22 @@ const Button = ({
                 `}
             >
                 {icon}
-                <span>{label}</span>
+                {children}
             </button>
         </div>
     )
 };
 
 Button.propTypes = {
-    label: PropTypes.string.isRequired,
+    children: PropTypes.node.isRequired,
     loading: PropTypes.bool,
     type: PropTypes.oneOf([
         'primary',
         'seconday',
         'warning',
         'success',
-        'danger'
+        'danger',
+        'link'
     ]),
     htmlType: PropTypes.oneOf([
         'submit',
@@ -60,7 +61,7 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-    label: 'Click Me',
+    children: <span>Click Me</span>,
     loading: false,
     type: 'primary',
     htmlType: 'button',
