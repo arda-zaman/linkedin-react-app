@@ -1,45 +1,47 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
+import { useStore } from '../../hooks';
 import { Button, Card, Divider } from '../../fields';
-import { ProfileImage } from '../../assets/files';
 import { Link } from 'react-router-dom';
 import { Icon } from '../../components';
-
-const communityPanelItems = {
-    recent: [
-        { name: 'Frontend Developers - HTML', type: 'group' },
-        { name: 'Zero to Global', type: 'event' },
-        { name: 'coding', type: 'hashtag' },
-        { name: 'github', type: 'hashtag' },
-        { name: 'stackoverflow', type: 'hashtag' },
-    ],
-    Groups: [
-        { name: 'Frontend Developers - HTML', type: 'group' },
-        { name: 'React Developers', type: 'group' },
-        { name: 'JavaScript', type: 'group' },
-    ],
-    'Followed Hashtags': [
-        { name: 'coding', type: 'hashtag' },
-        { name: 'github', type: 'hashtag' },
-        { name: 'stackoverflow', type: 'hashtag' },
-    ]
-}
 
 const LeftSide = ({
     isFixed
 }) => {
+    const [store] = useStore();
+    const [communityData, setCommunityData] = useState([]);
+
+    const { user = {} } = store;
+
+    useEffect(() => {
+        const req1 = axios.get('http://localhost:3000/recentActivities');
+        const req2 = axios.get('http://localhost:3000/groups');
+        const req3 = axios.get('http://localhost:3000/followedHashtags');
+
+        Promise.all([req1, req2, req3])
+            .then(([recentActivities, group, followedHashtags]) => {
+                setCommunityData([
+                    recentActivities.data,
+                    group.data,
+                    followedHashtags.data,
+                ]);
+            })
+            .catch((err) => console.log('Error occurred', err))
+    }, []);
+
     return (
         <div className="left-side">
             <Card id="profile-card" block>
-                <img src={ProfileImage} className="radius-50" width={75} height={75} />
-                <strong>Arda Zaman</strong>
-                <span>Javascript Developer</span>
+                <img src={user.photo} className="radius-50" width={75} height={75} />
+                <strong>{user.fullname}</strong>
+                <span>{user.role}</span>
 
                 <Divider />
 
                 <div className="d-flex justify-between align-center">
                     <span>Who viewed your profile</span>
-                    <mark>94</mark>
+                    <mark>{user.viewedProfileCount}</mark>
                 </div>
 
                 <div className="d-flex justify-between align-center">
@@ -47,7 +49,7 @@ const LeftSide = ({
                         <span>Connections</span>
                         <Link to="#" className="d-block strong">Manage your network</Link>
                     </div>
-                    <mark>637</mark>
+                    <mark>{user.connectionCount}</mark>
                 </div>
 
                 <Divider />
@@ -63,7 +65,7 @@ const LeftSide = ({
                 <div className="community-panel-content">
                     <small>Recent</small>
 
-                    {Object.entries(communityPanelItems).map(([title, items], index) => (
+                    {communityData.map(({ title, items }, index) => (
                         <div className="group" key={index}>
                             {index !== 0 && <mark>{title}</mark>}
 

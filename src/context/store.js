@@ -15,7 +15,11 @@ const Store = ({
     const updateStore = (storeKey, key, value) => {
         setState((prevState) => {
             const storeClone = Object.create(prevState);
-            storeClone[storeKey][key] = value;
+            if (key) {
+                storeClone[storeKey][key] = value;
+            } else {
+                storeClone[storeKey] = value;
+            }
             return storeClone;
         });
     };

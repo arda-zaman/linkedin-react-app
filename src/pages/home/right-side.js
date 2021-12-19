@@ -1,15 +1,24 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { Card, Button } from '../../fields';
 import { Icon } from '../../components';
-import { ProfileImage, Logo } from '../../assets/files';
+import { Logo } from '../../assets/files';
 
 const navItems = ['About', 'Accessibility', 'Help Center', 'Privacy & Terms', 'Ad Choices', 'Advertising', 'Business Services'];
 
 const RightSide = ({
     isFixed
 }) => {
+    const [suggestedPersons, setSuggestedPersons] = useState([]);
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/friendSuggestions')
+            .then((resp) => resp.data)
+            .then((resp) => setSuggestedPersons(resp))
+            .catch((err) => console.error('Error Occurred', err))
+    }, []);
 
     return (
         <div className="right-side">
@@ -20,13 +29,13 @@ const RightSide = ({
                 block
             >
                 <div className="people-list">
-                    {Array.from(Array(3)).map((person, idx) => (
+                    {suggestedPersons.map((person, idx) => (
                         <div className="person d-flex" key={idx}>
-                            <img src={ProfileImage} className="radius-50" width={40} height={40} />
+                            <img src={person.photo} className="radius-50" width={40} height={40} />
 
                             <div className="person-info">
-                                <strong>Aylin Zaman</strong>
-                                <small className="low">UI & UX Designer</small>
+                                <strong>{person.fullname}</strong>
+                                <small className="low">{person.role}</small>
                                 <Button type="secondary" shape="circle">
                                     <Icon icon="faPlus" />
                                     <span>Follow</span>

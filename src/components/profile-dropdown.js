@@ -1,6 +1,6 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
-import { ProfileImage } from '../assets/files';
 import { Divider, Button } from '../fields';
 
 const menuItems = {
@@ -15,14 +15,16 @@ const menuItems = {
     ]
 }
 
-const ProfileDropdown = () => {
+const ProfileDropdown = ({
+    user
+}) => {
     return (
         <div className="profile-dropdown">
             <div className="info-summary d-flex align-center">
-                <img src={ProfileImage} className="radius-50" width={75} height={75} />
+                <img src={user.photo} className="radius-50" width={75} height={75} />
                 <div className="text-side">
-                    <strong>Arda Zaman</strong>
-                    <span>Javascript Developer</span>
+                    <strong>{user.fullname}</strong>
+                    <span>{user.role}</span>
                 </div>
             </div>
 
@@ -53,6 +55,14 @@ const ProfileDropdown = () => {
             </div>
         </div>
     );
+};
+
+ProfileDropdown.propTypes = {
+    user: PropTypes.object
+};
+
+ProfileDropdown.defaultProps = {
+    user: {}
 };
 
 export default ProfileDropdown;
