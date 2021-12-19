@@ -1,0 +1,77 @@
+{
+    "profile": {
+        "name": "Arda Zaman",
+        "role": "Javascript Developer",
+        "photo": "https://media-exp1.licdn.com/dms/image/C4E03AQGbRa3kMQegyw/profile-displayphoto-shrink_400_400/0/1517278736852?e=1645660800&v=beta&t=kA80IalmG85PH9Fbz_WWsYsqX4hSIGpTnu6nXbo1jBs",
+        "viewedProfileCount": 94,
+        "connectionCount": 637
+    },
+    "friendSuggestions": [
+        {
+            "name": "Monica Geller",
+            "role": "Chef",
+            "photo": "https://i.pinimg.com/550x/c7/3c/12/c73c1249e86c1680bdd91f4f5b1dd4d3.jpg"
+        },
+        {
+            "name": "Joey Tribbiani",
+            "role": "Actor",
+            "photo": "https://static.wikia.nocookie.net/friends/images/f/f5/JoeyTribbiani.jpg/revision/latest?cb=20180424154245"
+        },
+        {
+            "name": "Chandler Bing",
+            "role": "Data Processing Supervisor",
+            "photo": "https://pbs.twimg.com/profile_images/1149028860677148673/qJiM1tI9_400x400.jpg"
+        }
+    ],
+    "communityInfo": {
+        "recentActivities": [
+            { "name": "Frontend Developers - HTML", "type": "group" },
+            { "name": "Zero to Global", "type": "event" },
+            { "name": "coding", "type": "hashtag" },
+            { "name": "github", "type": "hashtag" },
+            { "name": "stackoverflow", "type": "hashtag" }
+        ],
+        "Groups": [
+            { "name": "Frontend Developers - HTML", "type": "group" },
+            { "name": "React Developers", "type": "group" },
+            { "name": "JavaScript", "type": "group" }
+        ],
+        "Followed Hashtags": [
+            { "name": "coding", "type": "hashtag" },
+            { "name": "github", "type": "hashtag" },
+            { "name": "stackoverflow", "type": "hashtag" }
+        ]
+    },
+    "posts": [
+        {
+            "profile": {
+                "name": "Monica Geller",
+                "role": "Chef",
+                "photo": "https://i.pinimg.com/550x/c7/3c/12/c73c1249e86c1680bdd91f4f5b1dd4d3.jpg"
+            },
+            "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ullam quis odit vel repellendus veritatis nostrum non molestiae facere dolorum quam, soluta enim at assumenda explicabo aperiam reiciendis? Recusandae, quibusdam.",
+            "likes": 105,
+            "createdAt": "1h"
+        },
+        {
+            "profile": {
+                "name": "Joey Tribbiani",
+                "role": "Actor",
+                "photo": "https://static.wikia.nocookie.net/friends/images/f/f5/JoeyTribbiani.jpg/revision/latest?cb=20180424154245"
+            },
+            "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ullam quis odit vel repellendus veritatis nostrum non molestiae facere dolorum quam, soluta enim at assumenda explicabo aperiam reiciendis? Recusandae, quibusdam.",
+            "likes": 65,
+            "createdAt": "2h"
+        },
+        {
+            "profile": {
+                "name": "Chandler Bing",
+                "role": "Data Processing Supervisor",
+                "photo": "https://pbs.twimg.com/profile_images/1149028860677148673/qJiM1tI9_400x400.jpg"
+            },
+            "content": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Amet ullam quis odit vel repellendus veritatis nostrum non molestiae facere dolorum quam, soluta enim at assumenda explicabo aperiam reiciendis? Recusandae, quibusdam.",
+            "likes": 77,
+            "createdAt": "3h"
+        }
+    ]
+}
