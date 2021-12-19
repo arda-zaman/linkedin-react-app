@@ -4,7 +4,6 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: nowrap;
-    height: 1000vh;;
 
     .left-side {
         max-width: 225px;
@@ -17,7 +16,7 @@
             position: relative;
             padding-top: 15px;
             color: var(--dark-gray);
-            font-size: 13px;
+            font-size: 12px;
 
             img {
                 margin: 0 auto;
@@ -102,7 +101,7 @@
                         background-color: unset;
                         color: var(--primary-color);
                         font-weight: bold;
-                        font-size: 13px;
+                        font-size: 12px;
                     }
         
                     ul {
@@ -110,6 +109,7 @@
         
                         li {
                             margin: 0 -8px;
+                            font-size: 14px;
 
                             a {
                                 display: block;
@@ -133,5 +133,52 @@
                 }
             }
         }
+    }
+
+    .home-page-content {
+        flex: auto;
+        max-width: 100%;
+        margin: 0 20px;
+
+        #post-comment {
+
+            .top {
+
+                .button-field {
+                    flex: auto;
+                    max-width: 100%;
+                    margin-left: 10px;
+
+                    button {
+                        height: 45px;
+                        text-align: left;
+                    }
+                }
+            }
+
+            .post-kinds {
+                margin-top: 8px;
+
+                .button-field {
+
+                    button {
+                        display: flex;
+                        align-items: center;
+                        justify-content: flex-start;
+                        flex-wrap: nowrap;
+                        white-space: nowrap;
+
+                        span {
+                            margin-left: 8px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .right-side {
+        max-width: 225px;
+        flex: 0 0 225px; 
     }
 }
