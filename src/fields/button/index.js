@@ -14,7 +14,8 @@ const Button = ({
     // loading,
     icon,
     ghost,
-    block
+    block,
+    className
 }) => {
     return (
         <div className="button-field">
@@ -25,6 +26,7 @@ const Button = ({
                     shape-${shape}
                     ${ghost ? 'ghost' : ''}
                     ${block ? 'block' : ''}
+                    ${className}
                 `}
             >
                 {icon}
@@ -57,7 +59,8 @@ Button.propTypes = {
     ]),
     ghost: PropTypes.bool,
     block: PropTypes.bool,
-    icon: PropTypes.node
+    icon: PropTypes.node,
+    className: PropTypes.string
 };
 
 Button.defaultProps = {
@@ -68,7 +71,8 @@ Button.defaultProps = {
     shape: 'default',
     ghost: true,
     block: false,
-    icon: null
+    icon: null,
+    className: ''
 }
 
 export default Button;

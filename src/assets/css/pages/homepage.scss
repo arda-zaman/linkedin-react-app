@@ -4,6 +4,7 @@
     align-items: flex-start;
     justify-content: space-between;
     flex-wrap: nowrap;
+    padding-bottom: 40px;
 
     .left-side {
         max-width: 225px;
@@ -221,7 +222,67 @@
     }
 
     .right-side {
-        max-width: 225px;
-        flex: 0 0 225px; 
+        max-width: 315px;
+        flex: 0 0 315px;
+
+        #add-to-your-feed-card {
+
+            .card-header {
+
+                svg {
+                    color: var(--dark-gray);
+                }
+            }
+
+            .people-list {
+
+                .person {
+                    margin-top: 20px;
+                    font-size: 14px;
+
+                    img {
+                        margin-right: 8px;
+                    }
+
+                    .person-info {
+
+                        & > * {
+                            display: block;
+                            margin: 2px 0;
+                        }
+
+                        strong {
+                            font-size: 15px;
+                        }
+                    }
+                }
+            }
+
+            .view-all-button {
+                margin-top: 10px;
+                color: var(--dark-gray);
+                font-size: 14px;
+                font-weight: bolder;
+            }
+        }
+
+        .right-nav {
+            max-width: 70%;
+            margin: 0 auto;
+            margin-top: 20px;
+
+            .copyright {
+
+                .logo {
+                    transform: scale(0.4);
+                }
+    
+                small {
+                    white-space: nowrap;
+                    position: relative;
+                    top: -10px;
+                }
+            }
+        }
     }
 }

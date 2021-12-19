@@ -92,6 +92,9 @@
 .align-between { align-items: space-between;}
 .align-around { align-items: space-around;}
 
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+
 // BORDER & RADIUS
 .radius-25 { border-radius: 25%;}
 .radius-50 { border-radius: 50%;}
