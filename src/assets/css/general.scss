@@ -57,6 +57,8 @@
 .italic { font-style: italic; }
 .text-mark { color: var(--primary-color); }
 .strong { font-weight: bold; }
+.low { font-size: 12px; color: var(--dark-gray); }
+.link { &:hover { cursor: pointer; text-decoration: underline; color: var(--primary-color); } }
 
 .hide{
     opacity: 0;

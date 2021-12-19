@@ -10,6 +10,7 @@
         flex: 0 0 225px;
 
         #profile-card {
+
             background-image: url("https://media-exp1.licdn.com/dms/image/C4E16AQGh9fZD3kMhxg/profile-displaybackgroundimage-shrink_200_800/0/1517278737455?e=1645056000&v=beta&t=897XIVsHUyEsgVQ_WQQ50aQ1263PJgJWjQGvu37heCM");
             background-size: contain;
             background-repeat: no-repeat;
@@ -172,6 +173,48 @@
                             margin-left: 8px;
                         }
                     }
+                }
+            }
+        }
+
+        .posts {
+
+            #post-item {
+
+                .post-item-header {
+
+                    .names {
+                        margin-left: 12px;
+
+                        & > * {
+                            display: block;
+                        }
+                    }
+                }
+
+                .content-text {
+                    font-size: 14px;
+                }
+
+                .post-card-footer {
+
+                    .button-field {
+
+                        button {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            flex-wrap: nowrap;
+
+                            span {
+                                margin-left: 8px;
+                            }
+                        }
+                    }
+                }
+
+                &:not(:first-child) {
+                    margin-top: 8px;
                 }
             }
         }
