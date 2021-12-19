@@ -1,16 +1,22 @@
-import React from 'react';
+import React, { Suspense, lazy } from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import App from './containers/app';
 import Home from './pages/home';
 import MyNetworks from './pages/mynetworks';
 import Jobs from './pages/jobs';
 import Messaging from './pages/messaging';
 import Notifications from './pages/notifications';
+import LoadingPage from './components/loading';
+
+const AppContainer = lazy(() => import('./containers/app'));
 
 const RoutesComp = () => (
     <BrowserRouter>
         <Routes>
-            <Route path="/" element={<App />}>
+            <Route path="/" element={(
+                <Suspense fallback={<LoadingPage />}>
+                    <AppContainer />
+                </Suspense>
+            )}>
                 <Route path="/mynetwork" element={<MyNetworks />} />
                 <Route path="/jobs" element={<Jobs />} />
                 <Route path="/messaging" element={<Messaging />} />
